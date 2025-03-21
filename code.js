@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "SPYPE",
+  testo: "P",
 
   dimensione: 0.8,
   interlinea: 0.7,
@@ -9,7 +9,7 @@ export const configurazione = {
   sensibilitàMicrofonoBase: 1,
   densitàPuntiBase: 1,
 
-  nascondiInterfaccia: false,
+  nascondiInterfaccia: true,
 };
 
 /**
@@ -42,18 +42,55 @@ export function disegnaPunto({
   beta = 0,
   gamma = 0,
 }) {
-  const size = sin((frameCount + indice) * 6) * ((volume * unita) / 2) * unita;
+  //let lunghezza = map(volume, 0, 1, 50, 200);
+  //let larghezza = map(sin(frameCount * 20 + indice), -1, 1, -50, 20);
 
-  if (indice % 2 == 0) {
-    fill("black");
-  } else {
-    fill("white");
-  }
-  noStroke();
+  stroke("white");
+  fill("red");
+  //ellipse(x, y, lunghezza, 1);
+  //ellipse(x, y, larghezza, 5);
+
+  //ellipse(x, y, 90, 1);
+
+  //ellipse(x, y, larghezza, 10);
+  //ellipse(x, y, 10, 10);
+
+  //line(x, y, mouseX, mouseY);
+
+  //ellipse(x, y, larghezza, 10);
+
+  //ellipse(x, y, larghezza, 8);
+  //rect(x, y, larghezza, 8);
+
+  //ellipse(x, y, larghezza, 10);
+
+  //ellipse(x, y, larghezza, 10);
+  //ellipse(x, y, larghezza, 30);
 
   push();
   translate(x, y);
-  ellipse(0, 0, size);
+  rotate(frameCount * 6 + indice * 10);
+  translate(volume * 1000, 0);
+  ellipse(20, 0, 50, 20);
+  pop();
+
+  // push();
+  // fill("white");
+  // translate(x, y);
+  // rotate(random(0, 360));
+  // translate(volume * 1000, 0);
+  // ellipse(0, 0, 50, 30);
+  // pop();
+
+  // push();
+  // translate(x, y);
+  // rotate(angolo + 90 + frameCount + indice);
+  // let lunghezza = map(volume, 0, 1, 30, 200);
+  // // line(-lunghezza / 2, 0, lunghezza / 2, 0);
+  // ellipseMode(CENTER);
+  // noFill();
+  // rect(0, 0, lunghezza);
+
   pop();
 }
 
@@ -70,6 +107,7 @@ export function caricamentoRisorse() {}
 export function impostazioni() {
   frameRate(30);
   angleMode(DEGREES);
+  rectMode(CENTER);
 }
 
 /**
@@ -77,11 +115,11 @@ export function impostazioni() {
  * @param {function} disegnaTesto - La funzione che disegna il testo
  */
 export function sotto(disegnaTesto) {
-  background("deeppink");
+  background("white");
 
   // [INFO] Rimuovi il commento per disegnare il testo
-  fill("white");
-  disegnaTesto();
+  //fill("yellow");
+  //disegnaTesto();
 }
 
 /**
