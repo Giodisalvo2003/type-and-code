@@ -48,6 +48,9 @@ export function disegnaPunto({
   stroke("red");
   line(0, 0, gamma, 0);
 
+  let b = map(beta, -90, 90, -unita, unita);
+  let g = map(gamma, -90, 90, unita, -unita);
+
   //let lunghezza = map(volume, 0, 1, 50, 200);
   //let larghezza = map(sin(frameCount * 20 + indice), -1, 1, -50, 20);
 
