@@ -91,7 +91,7 @@ export function disegnaPunto({
   // noFill();
   // rect(0, 0, lunghezza);
 
-  pop();
+  // pop();
 }
 
 /**
