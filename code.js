@@ -9,7 +9,7 @@ export const configurazione = {
   sensibilitàMicrofonoBase: 1,
   densitàPuntiBase: 1,
 
-  nascondiInterfaccia: false,
+  nascondiInterfaccia: true,
 };
 
 /**
@@ -42,11 +42,19 @@ export function disegnaPunto({
   beta = 0,
   gamma = 0,
 }) {
+  push();
+  translate(x, y);
+
+  stroke("red");
+  line(0, 0, gamma, 0);
+
   //let lunghezza = map(volume, 0, 1, 50, 200);
   //let larghezza = map(sin(frameCount * 20 + indice), -1, 1, -50, 20);
 
   stroke("white");
   fill("red");
+
+  pop();
   //ellipse(x, y, lunghezza, 1);
   //ellipse(x, y, larghezza, 5);
 
@@ -67,12 +75,12 @@ export function disegnaPunto({
   //ellipse(x, y, larghezza, 10);
   //ellipse(x, y, larghezza, 30);
 
-  push();
-  translate(x, y);
-  rotate(frameCount * 6 + indice * 10);
-  translate(volume * 1000, 0);
-  ellipse(20, 0, 50, 20);
-  pop();
+  // push();
+  // translate(x, y);
+  // rotate(frameCount * 6 + indice * 10);
+  // translate(volume * 1000, 0);
+  // ellipse(20, 0, 50, 20);
+  // pop();
 
   // push();
   // fill("white");
